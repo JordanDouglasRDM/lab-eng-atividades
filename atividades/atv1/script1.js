@@ -46,6 +46,12 @@ function exercicio1() {
         }
     });
     function verificarTipoDado(dado) {
+        if (dado === '') {
+            return 'undefined';
+        }
+        if (typeof dado === 'undefined') {
+            return 'undefined';
+        }
         if (!isNaN(dado)) {
             if (Number.isInteger(parseFloat(dado))) {
                 return 'number e inteiro';
@@ -53,14 +59,15 @@ function exercicio1() {
                 return 'number e float';
             }
         }
-        if (typeof dado === 'string') {
-            return 'string';
-        }
         if (dado.toLowerCase() === 'true' || dado.toLowerCase() === 'false') {
             return 'boolean';
         }
+        if (typeof dado === 'string') {
+            return 'string';
+        }
         return 'undefined';
     }
+
 }
 
 function exercicio2() {
