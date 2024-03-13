@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <title>Atividades - Lab. de Engenharia</title>
 </head>
-<body class="meuBody">
+<body class="meuBody" data-bs-theme="dark">
 <nav class="navbar bg-secondary-subtle navbar-expand-lg">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Fatec - Lab. Engenharia</a>
@@ -44,8 +44,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-md-auto navbar-nav-scroll">
-                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
+                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i
+                        data-feather="github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank"
+                       class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
                 <li class="nav-item dropdown ms-4 meuDropDown2">
                     <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
@@ -62,9 +64,50 @@
         </div>
     </div>
 </nav>
-<div class="container alert alert-warning mt-5">
-    <div>Ainda não há nada por aqui...</div>
+<div class="container mt-5 m-100">
+    <div class="row gx-3 gy-3 h-100">
+        <div class="col-4">
+            <div class="one card h-100 border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Exercício 1</h5>
+                    <p class="card-text mt-4">Script que exibe a data atual em formato especificado.</p>
+                </div>
+                <p class="minhaDataFormatada card-footer text-center"></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="two card h-100  border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Exercício 2</h5>
+                    <p class="card-text mt-4">A utilização do método setTimeout() e implementação
+                        um relógio que atualize o horário a cada segundo.</p>
+                </div>
+                <p class="card-footer text-center"><i class="fa-regular fa-clock meuRelogio"></i></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="three card h-100  border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Exercício 3</h5>
+                    <p class="card-text">Implemente um script que leia uma palavra ou frase de um
+                        campo de texto e exiba em uma janela de alert se o texto é ou
+                        não um palíndromo.</p>
+                    <form id="formulario-dados" class="form row">
+                        <label for="valor" class="form-label fs-5 mt-2">Digite um texto:</label>
+                        <div class="col-5 input-group">
+                            <input type="text" id="valor" name="valor" class="form-control meuValor" autofocus
+                                   onkeydown="if(event.keyCode === 13) verificarPalindromo(event);">
+                            <button type="button" class="btn btn-success" onclick="verificarPalindromo(event)">
+                                Veriicar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="script3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>
