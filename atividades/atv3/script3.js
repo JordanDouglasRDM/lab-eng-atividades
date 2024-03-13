@@ -37,13 +37,13 @@ function verificarPalindromo() {
         });
     } else if (valorInvertido === valor) {
         Swal.fire({
-            title: "'" + valor + "' é um palíndromo!:",
+            title: "'" + valor + "' é um palíndromo!",
             icon: "success",
             confirmButtonColor: "#26ab2c",
         });
     } else {
         Swal.fire({
-            title: "'" + valor + "' não é um palíndromo!:",
+            title: "'" + valor + "' não é um palíndromo!",
             icon: "error",
             confirmButtonColor: "#26ab2c",
         });
