@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js" defer></script>
     <title>Atividades</title>
 </head>
 <body class="meuBody" data-bs-theme="dark">
@@ -45,8 +46,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-md-auto navbar-nav-scroll">
-                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
+                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i
+                        data-feather="github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank"
+                       class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
                 <li class="nav-item dropdown ms-4 meuDropDown2">
                     <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
@@ -63,8 +66,60 @@
         </div>
     </div>
 </nav>
-<div class="container alert alert-warning mt-5">
-    <div>Ainda não há nada por aqui...</div>
+<div class="container-fluid mt-5" style="width: 50%">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active border-secondary" id="meuBotaoAluno">
+                Aluno
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="meuBotaoProfessor">
+                Professor
+            </a>
+        </li>
+    </ul>
+    <div class="card border-secondary" style="padding: 30px">
+        <form class="row g-3">
+            <div class="col-12">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" autofocus placeholder="Fulano da Silva">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="email.validated@example.com">
+            </div>
+            <div class="col-6">
+                <label for="celular" class="form-label">Telefone Celular</label>
+                <input type="text" class="form-control" id="celular" placeholder="(18) 99999-0000">
+            </div>
+            <div class="col-6">
+                <label for="fixo" class="form-label">Telefone Fixo</label>
+                <input type="text" class="form-control" id="fixo" placeholder="(18) 3900-0000">
+            </div>
+            <div class="col-4">
+                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="dataNascimento">
+            </div>
+            <div class="col-6">
+                <label for="matricula" class="form-label">Matrícula</label>
+                <input type="text" class="form-control" id="matricula" placeholder="000 000 0000">
+            </div>
+            <div class="col-12 collapse show" id="especificoAluno">
+                <label for="curso" class="form-label">Curso</label>
+                <input type="text" class="form-control" id="curso" placeholder="Análise e Desenvolvimento de Sistemas">
+            </div>
+            <div class="col-12 collapse" id="especificoProfessor">
+                <label for="area" class="form-label">Área</label>
+                <input type="text" class="form-control" id="area" placeholder="Tecnologia">
+                <label for="lattes" class="form-label mt-2">Lattes</label>
+                <input type="text" class="form-control" id="lattes" placeholder="https://lattes.com.br/suaurllates">
+            </div>
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary" id="botaoEnviar">Cadastrar</button>
+            </div>
+        </form>
+    </div>
 </div>
 <script src="script4.js"></script>
 </body>
