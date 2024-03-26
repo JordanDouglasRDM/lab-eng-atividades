@@ -70,34 +70,8 @@
         </div>
     </div>
 </nav>
-<div class="container">
-    <h2 class="text-center mt-5">Contador de Pessoas</h2>
-    <div class="row mt-5 text-center justify-content-center mb-4">
-        <p class="col-12">Total de Pessoas</p>
-        <span class="col-1 border text-center border-success my-1" id="totalCounter">0</span>
-        <a class="col-auto mt-1 text-secondary-emphasis" onclick="resetCount()"><i class="fa-solid fa-arrows-rotate"></i></a>
-    </div>
-    <div class="row justify-content-center" style="height: 300px">
-        <div class="card col-3 d-flex align-items-center">
-            <img class="rounded-circle mt-3" src="../../img/avatar_masc.jpg" alt="Avatar Masculino" style="max-width: 100px; max-height: 100px">
-            <p class="text align-items-center mt-2 m-0">Homens</p>
-            <div class="row align-items-center justify-content-center">
-                <span class="border text-center border-secondary px-4 my-4 border-info-subtle" id="maleCounter">0</span>
-                <a class="col-auto text-danger-emphasis" onclick="decrementMale()"><i class="fa-solid fa-circle-minus"></i></a>
-                <a class="col-auto text-success-emphasis" onclick="incrementMale()"><i class="fa-solid fa-circle-plus"></i></a>
-            </div>
-        </div>
-        <div class="card col-3 d-flex align-items-center ms-2">
-            <img class="rounded-circle mt-3" src="../../img/avatar_fem.jpg" alt="Avatar Masculino" style="max-width: 100px; max-height: 100px">
-            <p class="text align-items-center mt-2 m-0">Mulheres</p>
-            <div class="row align-items-center justify-content-center">
-                <span class="border text-center border-secondary px-4 my-4 border-info-subtle" id="femaleCounter">0</span>
-                <a class="col-auto text-danger-emphasis" onclick="decrementFemale()"><i class="fa-solid fa-circle-minus"></i></a>
-                <a class="col-auto text-success-emphasis" onclick="incrementFemale()"><i class="fa-solid fa-circle-plus"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
+
+<div class="container" id="containePrincipal"><div>
 
 <script src="script5.js"></script>
 </body>
