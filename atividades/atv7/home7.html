@@ -10,11 +10,22 @@
             crossorigin="anonymous" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f50e2463f.js" crossorigin="anonymous"></script>
-    <script src="/../lab-eng-atividades/js/script.js" defer></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <script src="/../lab-eng-atividades/js/script.js" defer></script>
+
     <link rel="icon" type="image/x-icon" href="/../lab-eng-atividades/img/favicon.png">
     <title>Atividades</title>
+    <style>
+        a {
+            color: unset;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="meuBody" data-bs-theme="dark">
 <nav class="navbar bg-secondary-subtle navbar-expand-lg">
@@ -37,19 +48,17 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="../atv1/home1.html">Atividade 1</a></li>
                         <li><a class="dropdown-item" href="../atv2/home2.html">Atividade 2</a></li>
-                        <li><a class="dropdown-item" href="home3.html">Atividade 3</a></li>
+                        <li><a class="dropdown-item" href="../atv3/home3.html">Atividade 3</a></li>
                         <li><a class="dropdown-item" href="../atv4/home4.html">Atividade 4</a></li>
                         <li><a class="dropdown-item" href="../atv5/home5.html">Atividade 5</a></li>
                         <li><a class="dropdown-item" href="../atv6/home6.html">Atividade 6</a></li>
-                        <li><a class="dropdown-item" href="../atv7/home7.html">Atividade 7</a></li>
+                        <li><a class="dropdown-item" href="./home7.html">Atividade 7</a></li>
                     </ul>
                 </li>
             </ul>
             <ul class="navbar-nav ms-md-auto navbar-nav-scroll">
-                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i
-                        data-feather="github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank"
-                       class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
+                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
                 <li class="nav-item dropdown ms-4 meuDropDown2">
                     <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
@@ -66,50 +75,58 @@
         </div>
     </div>
 </nav>
-<div class="container mt-5 m-100">
-    <div class="row gx-3 gy-3 h-100">
-        <div class="col-4">
-            <div class="one card h-100 border-primary">
-                <div class="card-body">
-                    <h5 class="card-title">Exercício 1</h5>
-                    <p class="card-text mt-4">Script que exibe a data atual em formato especificado.</p>
-                </div>
-                <p class="minhaDataFormatada card-footer text-center"></p>
+<div class="container justify-content-center" style="margin-top: 50px" id="root"></div>
+<script type="text/babel">
+    const faculdade = {
+        nome: 'Fatec',
+        cidade: 'Presidente Prudente'
+    };
+
+    function formatName(faculdade) {
+        return faculdade.nome + ' - ' + faculdade.cidade;
+    }
+
+    // Componente TypingEffect
+    function TypingEffect({ text }) {
+        const [displayText, setDisplayText] = React.useState('');
+
+        React.useEffect(() => {
+            let currentIndex = 0;
+            const intervalId = setInterval(() => {
+                setDisplayText((prevText) => {
+                    if (currentIndex < text.length) {
+                        return prevText + text[currentIndex++];
+                    } else {
+                        currentIndex = 0;
+                        return '';
+                    }
+                });
+            }, 90);
+
+            return () => clearInterval(intervalId);
+        }, [text]);
+
+        return <div>{displayText}</div>;
+    }
+
+
+    function MeuElemento({ agora }) {
+        return (
+            <div>
+                <h1>Olá Mundo</h1>
+                <h5>Agora são {agora}</h5>
+                <TypingEffect text="Meu nome é Jordan Douglas, estudante da FATEC." />
             </div>
-        </div>
-        <div class="col-4">
-            <div class="two card h-100  border-primary">
-                <div class="card-body">
-                    <h5 class="card-title">Exercício 2</h5>
-                    <p class="card-text mt-4">A utilização do método setTimeout() e implementação
-                        um relógio que atualize o horário a cada segundo.</p>
-                </div>
-                <p class="card-footer text-center"><i class="fa-regular fa-clock meuRelogio"></i></p>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="three card h-100  border-primary">
-                <div class="card-body">
-                    <h5 class="card-title">Exercício 3</h5>
-                    <p class="card-text">Implemente um script que leia uma palavra ou frase de um
-                        campo de texto e exiba em uma janela de alert se o texto é ou
-                        não um palíndromo.</p>
-                    <form id="formulario-dados" class="form row">
-                        <label for="valor" class="form-label fs-5 mt-2">Digite um texto:</label>
-                        <div class="col-5 input-group">
-                            <input type="text" id="valor" name="valor" class="form-control meuValor" autofocus
-                                   onkeydown="if(event.keyCode === 13) verificarPalindromo(event);">
-                            <button type="button" class="btn btn-success" onclick="verificarPalindromo(event)">
-                                Veriicar
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="script3.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+        )
+    }
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+
+    setInterval(() => {
+        let now = new Date().toLocaleTimeString();
+        root.render(<MeuElemento agora={now} />)
+    }, 1000)
+
+</script>
 </body>
 </html>
