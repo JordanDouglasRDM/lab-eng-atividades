@@ -16,6 +16,99 @@
     <link rel="icon" type="image/x-icon" href="/../lab-eng-atividades/img/favicon.png">
     <title>Atividades</title>
 </head>
+<style>
+    /* ======== VARIABLES ======== */
+    :root {
+        --ff: "Segoe UI", system-ui, sans-serif;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    /* ======== CSS ======== */
+    main {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*======== CALCULATOR ======== */
+
+    #calculator {
+        font-family: var(--ff);
+        width: 320px;
+        background: #202020;
+        padding: 4px;
+        padding-top: 16px;
+        border-radius: 9px;
+    }
+
+    #calculatorButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 50px;
+        gap: 2px;
+        margin-top: 16px;
+    }
+
+    #calculatorButtons button {
+        font-family: var(--ff);
+        border: none;
+        border-radius: 5px;
+        color: #f7f7f7;
+        background: #323232;
+        font-size: 20px;
+    }
+
+    #calculatorButtons :is(button:hover, .calculator-number) {
+        background: #3c3c3c;
+    }
+
+    #calculatorButtons .calculator-number:hover {
+        background: #323232;
+    }
+
+    #calculatorButtons .calculator-equal {
+        color: #143141;
+        background: #4cc2ff;
+    }
+
+    #calculatorButtons .calculator-equal:hover {
+        background: #47b1e8;
+    }
+
+    /* ======== INPUT NUMBER ======== */
+    #calculator input {
+        font-family: var(--ff);
+        border: none;
+        background: transparent;
+        color: #fff;
+        text-align: right;
+        width: 300px;
+        transform: translateX(5px);
+        font-size: 50px;
+        font-weight: 600;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /* ======== CALCUL ======== */
+    #calculatorCalculScreen {
+        font-size: 14px;
+        color: #a1a1a1;
+        text-align: right;
+        padding-inline: 10px;
+        overflow-x: hidden;
+    }
+</style>
 <body class="meuBody" data-bs-theme="dark">
 <nav class="navbar bg-secondary-subtle navbar-expand-lg">
     <div class="container-fluid">
@@ -45,8 +138,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-md-auto navbar-nav-scroll">
-                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank" class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
+                <li><a href="https://github.com/JordanDouglasRDM" target="_blank" class="nav-link col-lg-auto me-2"><i
+                        data-feather="github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/jordan-douglas-rosa-de-melo/" target="_blank"
+                       class="nav-link col-lg-auto me-2"><i data-feather="linkedin"></i></a></li>
                 <li class="nav-item dropdown ms-4 meuDropDown2">
                     <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
@@ -63,9 +158,6 @@
         </div>
     </div>
 </nav>
-<div class="container alert alert-warning mt-5">
-    <div>Ainda não há nada por aqui...</div>
-</div>
 <script src="script6.js"></script>
 </body>
 </html>
